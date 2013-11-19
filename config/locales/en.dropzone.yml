@@ -1,0 +1,5 @@
+en:
+  dropzone:
+    buttons:
+      cancel: "Cancel"
+      delete: "Delete"

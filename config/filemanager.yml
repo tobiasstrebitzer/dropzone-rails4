@@ -1,0 +1,4 @@
+profiles:
+  large_app_icon:
+    allowed_sizes:
+      - { width: 1024, height: 1024 }
