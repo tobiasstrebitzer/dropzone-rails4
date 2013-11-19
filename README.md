@@ -1,4 +1,4 @@
-# Dropzone::Rails4
+# Dropzone
 
 TODO: Write a gem description
 
@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'dropzone-rails4'
+    gem 'dropzone'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install dropzone-rails4
+    $ gem install dropzone
 
 ## Usage
 
