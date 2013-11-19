@@ -1,6 +1,6 @@
 # Dropzone
 
-TODO: Write a gem description
+This gem integrates dropzone.js into your rails app, and allows dynamic association of uploaded images to your existing models. Isn't that great?
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Follow soon!
 
 ## Contributing
 
