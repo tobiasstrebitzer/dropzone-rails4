@@ -37,16 +37,12 @@
                     
                     // Save options
                     self.options = $.extend(true, {}, self.defaults, options, response.profile);
-                    console.log('self.options', self.options);
                     
                     // Store entity
                     self.entityId = response.entity_id;
                     
                     // Create images
                     self.images = response.images;
-                    
-                    console.log('self.images', self.images.length);
-
             
                     // initialize widget
                     self.initializeWidget();

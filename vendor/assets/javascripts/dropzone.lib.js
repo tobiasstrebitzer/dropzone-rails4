@@ -1072,12 +1072,9 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
           // Check if a correct size exists
           for (var i = 0; i < self.options.acceptedSizes.length; i++) {
             if(this.width == self.options.acceptedSizes[i].width && this.height == self.options.acceptedSizes[i].height) {
-              console.log("size hit!");
               return self.options.accept.call(self, file, done);
             }
           }
-          
-          console.log("no size hit!");
           
           // If no size fits, return error
           done(self.options.dictInvalidSize);
