@@ -41,10 +41,4 @@ module Dropzone
      attr_accessor :profiles
   end
 
-  def self.included(base)
-    # base.extend ClassMethods
-    # base.send :include, InstanceMethods
-  end
-
-
 end

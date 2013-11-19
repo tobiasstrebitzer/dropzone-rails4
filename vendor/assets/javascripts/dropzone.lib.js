@@ -1060,7 +1060,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
         done(this.options.dictMaxFilesExceeded.replace("{{maxFiles}}", this.options.maxFiles));
         return this.emit("maxfilesexceeded", file);
       } else if (!this.options.acceptedSizes || this.options.acceptedSizes.length == 0) {
-        return self.options.accept.call(self, file, done);
+        return this.options.accept.call(this, file, done);
       } else {
         
         // Check file dimentsions

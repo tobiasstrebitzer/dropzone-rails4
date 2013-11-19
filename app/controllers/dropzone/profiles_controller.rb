@@ -1,5 +1,4 @@
-class Dropzone::ProfilesController < Dropzone::ApplicationController
-  before_filter :signed_in_user
+class Dropzone::ProfilesController < ::ApplicationController
   
   def info
     
@@ -34,21 +33,27 @@ class Dropzone::ProfilesController < Dropzone::ApplicationController
     entity_class = profile["entity_class"].constantize
     entity = entity_class.find(params[:entity_id])
     
-    # Create image
-    image_class = profile["image_class"].constantize
-    image = image_class.new({image: params[:image]})
-    image.send("#{entity_class.name.underscore}=", entity)
-    image.key = params[:profile_id]
+    # Load image
+    if current_user?(entity.user)
     
-    # Save image
-    if image.save
-      resultData = {status: 'success'};
-      if image.respond_to?(:dropzone_save_response)
-        image.dropzone_save_response(resultData)
-      end      
-      render json: resultData, status: :created
+      # Create image
+      image_class = profile["image_class"].constantize
+      image = image_class.new({image: params[:image]})
+      image.send("#{entity_class.name.underscore}=", entity)
+      image.key = params[:profile_id]
+    
+      # Save image
+      if image.save
+        resultData = {status: 'success', id: image.id};
+        if image.respond_to?(:dropzone_save_response)
+          image.dropzone_save_response(resultData)
+        end      
+        render json: resultData, status: :created
+      else
+        render json: image.errors, status: :unprocessable_entity
+      end
     else
-      render json: image.errors, status: :unprocessable_entity
+      render json: { success: false }
     end
 
   end

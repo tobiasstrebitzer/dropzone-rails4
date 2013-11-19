@@ -120,12 +120,12 @@
                     });                    
                 }else{
                     self.totalFiles--;
-                    // MagLoft.UI.alert("Error", "You can not upload more images here.");
                 }
             });
             
             // Handle success
             this.dropzone.on("success", function(file, response) {
+                file.id = response.id;
                 self.options.onSuccess(file, response);
             });
             
