@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "dropzone"
-  spec.version       = "1.0.6"
+  spec.version       = "1.0.7"
   spec.authors       = ["Tobias Strebitzer"]
   spec.email         = ["tobias.strebitzer@gmail.com"]
   spec.description   = %q{dropzone.js Gem for Ruby on Rails 4}

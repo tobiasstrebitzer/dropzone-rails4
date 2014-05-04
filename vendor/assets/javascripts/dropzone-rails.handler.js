@@ -4,7 +4,7 @@
         
         defaults: {
             allowed_sizes: [],
-            allowed_types: ["image/png","image/jpeg","image/gif"],
+            allowed_types: [],
             max_files: 1,
             width: null,
             multiple: false,
@@ -87,6 +87,9 @@
                 acceptedFiles: this.options.allowed_types ? this.options.allowed_types.join(",") : "",
                 acceptedSizes: this.options.allowed_sizes
             });
+            
+            // Attach dropzone data to element
+            this.$dropzone.data('dropzone', this.dropzone);
             
             // Add existing items
             for (var i = 0; i < this.images.length; i++) {
